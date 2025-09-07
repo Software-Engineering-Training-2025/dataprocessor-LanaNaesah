@@ -37,8 +37,12 @@ public class DataProcessorService {
         // 2) Analyze cleaned array according to analysisType.
         // 3) Output according to outputType (console or target/result.txt).
         // 4) Return the numeric result.
-
-        throw new UnsupportedOperationException("Student must implement process(...)");
+        CleanMethodoligy cleaned=CleanFactory.create(cleaningType);
+        AnalysisMethodoligy Analyzed=AnalysisFactory.create(analysisType);;
+        OutputMethodology Out =OutputFactory.create(outputType);
+        return new Proccess(cleaned,Analyzed,Out).ProccessOut(data);
+        //throw new UnsupportedOperationException("Student must implement process(...)");
     }
+
 }
 
